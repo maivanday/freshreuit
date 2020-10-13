@@ -1,0 +1,126 @@
+.navbar {
+  background-color: rgb(72, 164, 74) !important;
+}
+#dropdown {
+  background-color: #ffffff !important;
+}
+#dropdown .nav-link {
+  color: #000000 !important;
+}
+#dropdown :hover {
+  color: rgb(72, 164, 74) !important;
+}
+
+.nav-link {
+  color: #ffffff !important;
+}
+
+.nav-pills li:hover {
+  background-color: #000000 !important;
+}
+.nav-pills .nav-item a:hover {
+  color: #ffffff !important;
+}
+.carousel-inner img {
+  width: 100% !important;
+  height: 750px !important;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+}
+.carousel-caption#top {
+  position: absolute;
+  top: 0 !important;
+}
+.btn-primary {
+  background-color: rgb(60, 158, 63);
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #17de2b;
+}
+
+.display-4 {
+  font-weight: 600;
+  color: #000000;
+}
+.display-2 {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.carousel-caption .btn-responsive {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+}
+
+/*media query*/
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+  /* .carousel-inner img {
+    width: 100% !important;
+    height: 600px !important;
+  } */
+}
+@media (max-width: 756px) {
+  /* .carousel-inner img {
+    width: 100% !important;
+    height: 600px !important;
+  } */
+  .display-4 {
+    font-size: 50px;
+  }
+  .display-2 {
+    font-size: 40px;
+  }
+}
+/* ------product */
+.product-list {
+  margin: 0;
+}
+
+.product-item {
+  text-align: center;
+  padding: 15px;
+  position: relative;
+}
+.product-item img {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+.product-item:hover .mask {
+  display: block;
+  transition: all 2s;
+}
+.product-item img {
+  margin-bottom: 15px;
+}
+.product-item a {
+  color: #666;
+}
+.price {
+  font-weight: bold;
+  color: #d60000;
+}
+.mask {
+  background: rgba(1, 45, 9, 0.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.75;
+  display: none;
+}
+.mask a {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  /* left: 0;right:0; margin: auto;width: 100%; cho width de thanh block, vi width là block, a la inline */
+  margin-left: -37px;
+}
