@@ -10,44 +10,66 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//upload file
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
-Route::get('/', 'HomeController@index') ;
+Route::get('/admin', 'AdminController@loginAdmin');
+Route::POST('/admin', 'AdminController@postLoginAdmin');
+
 
 Route::get('/home', function () {
     return view('home');
 });
 
-Route::group(['prefix' => 'categories'], function () {
 
-      Route::get('/',[
-        'as'=>'categories.index',
-        'uses'=>'CategoryController@index'
-    ]);
-    Route::get('/create',[
-        'as'=>'categories.create',
-        'uses'=>'CategoryController@create'
-    ]);
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'categories'], function () {
 
-     Route::POST('/store',[
-        'as'=>'categories.store',
-        'uses'=>'CategoryController@store'
-    ]);
+        Route::get('/', [
+            'as' => 'categories.index',
+            'uses' => 'CategoryController@index'
+        ]);
+        Route::get('/create', [
+            'as' => 'categories.create',
+            'uses' => 'CategoryController@create'
+        ]);
 
-       Route::get('/edit/{id}',[
-        'as'=>'categories.edit',
-        'uses'=>'CategoryController@edit'
-    ]);
+        Route::POST('/store', [
+            'as' => 'categories.store',
+            'uses' => 'CategoryController@store'
+        ]);
 
-        Route::POST('/update/{id}',[
-        'as'=>'categories.update',
-        'uses'=>'CategoryController@update'
-    ]);
+        Route::get('/edit/{id}', [
+            'as' => 'categories.edit',
+            'uses' => 'CategoryController@edit'
+        ]);
 
-       Route::get('/delete/{id}',[
-        'as'=>'categories.delete',
-        'uses'=>'CategoryController@delete'
-    ]);
+        Route::POST('/update/{id}', [
+            'as' => 'categories.update',
+            'uses' => 'CategoryController@update'
+        ]);
 
+        Route::get('/delete/{id}', [
+            'as' => 'categories.delete',
+            'uses' => 'CategoryController@delete'
+        ]);
+    });
+    //quanlysanpham
+    Route::group(['prefix' => 'product'], function () {
 
+        Route::get('/', [
+            'as' => 'product.index',
+            'uses' => 'AdminProductController@index'
+        ]);
+        Route::get('/create', [
+            'as' => 'product.create',
+            'uses' => 'AdminProductController@create'
+        ]);
+        Route::POST('/store', [
+            'as' => 'product.store',
+            'uses' => 'AdminProductController@store'
+        ]);
+    });
 });
-

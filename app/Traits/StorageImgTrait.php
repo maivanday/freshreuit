@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Traits;
+
+use Storage;
+
+trait StorageImgTrait
+{
+    public function storageTraitUpload($request, $fileName, $folderName)
+    {
+        if ($request->hasFile($fileName)) {
+
+            $file = $request->$fileName;
+            $fileNameOrigin  = $file->getClientOriginalName();
+            $filePath = $request->file($fileName)->storeAs('public/' . $folderName . '/' . auth()->id(), $fileNameOrigin);
+
+            $dataUploadTrait = [
+                'file_name' => $fileNameOrigin,
+                'file_path' => Storage::url($filePath)
+            ];
+            return $dataUploadTrait;
+        }
+        return null;
+    }
+}
