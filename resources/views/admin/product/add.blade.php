@@ -38,7 +38,7 @@
 
                           <div class="form-group">
                               <label for="">Ảnh chi tiết</label>
-                              <input type="file" multiple class="form-control-file" name="image_path[]">
+                              <input type="file" class="form-control-file" name="image_path[]" multiple>
                           </div>
 
 
@@ -50,14 +50,14 @@
 
                           <div class="form-group">
                               <label for="">Chọn loại danh mục</label>
-                              <select class="form-control" name="parent_id">
+                              <select class="form-control" name="category_id">
                                   <option value="0">Chọn loại danh mục</option>
                                   {!! $htmlOption !!}
                               </select>
                           </div>
                           <div class="form-group">
                               <label for="">Nội dung</label>
-                              <textarea class="form-control tinymce_editor_init" name="content" rows="4"> </textarea>
+                              <textarea class="form-control tinymce_editor_init" name="contents" rows="4"> </textarea>
                           </div>
 
 
