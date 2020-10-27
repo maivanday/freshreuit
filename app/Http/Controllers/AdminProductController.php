@@ -9,6 +9,7 @@ use App\productTag;
 use App\productImage;
 use Illuminate\Http\Request;
 use App\Components\Recusive;
+use App\Http\Requests\productAddRequest;
 use Storage;
 use App\Traits\StorageImgTrait;
 use DB;
@@ -64,7 +65,7 @@ class AdminProductController extends Controller
         return $htmlOption;
     }
 
-    public function store(Request $request)
+    public function store(productAddRequest $request)
     {
         try {
             DB::beginTransaction();
@@ -119,5 +120,71 @@ class AdminProductController extends Controller
         $product = $this->product->find($id);
         $htmlOption = $this->getCategory($product->category_id);
         return view('admin.product.edit', compact('htmlOption', 'product'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+            $dataProductUpdate = [
+                'name' => $request->name,
+                'price' => $request->price,
+                'content' => $request->contents,
+                'user_id' => auth()->id(),
+                'category_id' => $request->category_id
+
+            ];
+
+            $dataUploadFeatureImg = $this->storageTraitUpload($request, 'feature_img_path', 'product');
+            if (!empty($dataUploadFeatureImg)) {
+
+                $dataProductUpdate['feature_img_name'] = $dataUploadFeatureImg['file_name'];
+                $dataProductUpdate['feature_img_path'] = $dataUploadFeatureImg['file_path'];
+            }
+            $this->product->find($id)->update($dataProductUpdate);
+            $product = $this->product->find($id);
+            //them data to product image
+            if ($request->hasFile('image_path')) {
+                $this->productImage->where('product_id', 'id')->delete();
+                foreach ($request->image_path as $fileItem) {
+                    $dataProductImageDetail = $this->storageTraitUploadMutiple($fileItem, 'product');
+                    $product->images()->create([
+                        'image_path' => $dataProductImageDetail['file_path'],
+                        'image_name' => $dataProductImageDetail['file_name']
+
+                    ]);
+                }
+            }
+            // them tags to product
+            if (!empty($request->tags)) {
+
+                foreach ($request->tags as $tagItem) {
+                    //them to tags_select
+                    $tagInstance = $this->tag->firstOrCreate(['name' => $tagItem]);
+                    $tagIds[] = $tagInstance->id;
+                }
+            }
+            $product->tags()->sync($tagIds);
+            DB::commit();
+            return redirect()->route('product.index');
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            Log::error('Message: ' . $exception->getMessage() . '  line: ' . $exception->getLine());
+        }
+    }
+
+    public function delete($id)
+    {
+        try {
+            $this->product->find($id)->delete();
+            return response()->json([
+                'code' => 200,
+                'message' => 'success'
+
+            ]);
+        } catch (\Exception $exception) {
+
+            Log::error('Message: ' . $exception->getMessage() . '  line: ' . $exception->getLine());
+        }
     }
 }

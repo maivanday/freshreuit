@@ -76,5 +76,16 @@ Route::group(['prefix' => 'admin'], function () {
             'as' => 'product.edit',
             'uses' => 'AdminProductController@edit'
         ]);
+        Route::POST('/update/{id}', [
+            'as' => 'product.update',
+            'uses' => 'AdminProductController@update'
+        ]);
+
+        Route::get('/delete/{id}', [
+            'as' => 'product.delete',
+            'uses' => 'AdminProductController@delete'
+        ]);
     });
 });
+// frontend
+Route::get('/', 'HomeController@index');

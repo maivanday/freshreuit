@@ -17,3 +17,13 @@
     width: 200px;
     height: 250px;
 }
+/* alert validation */
+.alert-danger {
+    border: none;
+    background-color: #ffffff !important;
+    color: #e50f0f !important;
+}
+.alert {
+    padding: 0;
+    margin-top: 5px !important;
+}
