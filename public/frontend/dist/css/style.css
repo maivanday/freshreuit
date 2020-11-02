@@ -48,7 +48,7 @@
 }
 .display-2 {
     font-weight: 500;
-    color: #ffffff;
+    color: #17de2b;
 }
 
 .carousel-caption .btn-responsive {
@@ -92,6 +92,8 @@
     border: none;
     padding: 0;
     border-radius: 0;
+    width: 200px;
+    height: 200px;
 }
 .product-item:hover .mask {
     display: block;
@@ -123,6 +125,40 @@
     top: 50%;
     /* left: 0;right:0; margin: auto;width: 100%; cho width de thanh block, vi width là block, a la inline */
     margin-left: -37px;
+}
+
+/* category */
+
+#category a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 23px;
+}
+#sportswear a {
+    font-size: 18px;
+}
+
+#category li:hover a {
+    background-color: #13cc0b;
+}
+#category li a:hover {
+    color: #ffffff;
+}
+#category li {
+    list-style: none;
+}
+
+/* san pham moi nhat */
+#category_name li a {
+    text-decoration: none;
+    font-size: 23px;
+    color: #000000;
+}
+#category_name li:hover {
+    background-color: #13cc0b;
+}
+#category_name li:hover a {
+    color: #ffffff;
 }
 /* footer */
 

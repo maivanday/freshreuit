@@ -5,6 +5,7 @@
 @endsection
 
 @section('css')
+
 <link rel="stylesheet" href="{{asset('frontend/dist/css/style.css')}}" />
 
 @endsection
@@ -16,11 +17,11 @@
         <li data-target="#slides" data-slide-to="0" class="active"></li>
         <li data-target="#slides" data-slide-to="1"></li>
         <li data-target="#slides" data-slide-to="2"></li>
-        <li data-target="#slides" data-slide-to="3"></li>
+
     </ul>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_1.png')}}" alt="" />
+            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_2.jpg')}}" alt="" />
             <div class="carousel-caption">
                 <h2 class="display-4">Fresh Fruit</h2>
 
@@ -30,11 +31,9 @@
                 </button>
             </div>
         </div>
+
         <div class="carousel-item">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_2.jpg')}}" alt="" />
-        </div>
-        <div class="carousel-item">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_3.jpg')}}" alt="" />
+            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_1.jpg')}}" alt="" />
         </div>
         <div class="carousel-item">
             <img class="img-fluid" src="{{asset('frontend/dist/img/slider_4.jpg')}}" alt="" />
@@ -98,134 +97,79 @@
         </div>
     </div>
 </div>
-<!--  -->
-<nav class="navbar-expand-md navbar-light bg-light" id="dropdown">
-    <div class="container">
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
-            <span>xem thêm </span>
-            <span class="btn btn-primary dropdown-toggle"></span>
-        </button>
-        <div class="collapse navbar-collapse align-items-center" id="navbar">
-            <div class="navbar-nav m-auto">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Trái cây Việt Nam</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            &nbsp Trái cây Hàn Quốc
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">&nbsp Trái cây NewZealand</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">&nbsp Trái cây Đài Loan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">&nbsp trái cây Nam Phi</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
-<!-- danh sach san pham -->
-<div class="container">
-    <div class="product">
-        <div class="product-list row">
-            <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                <a href="#"><img src="{{asset('frontend/dist/img/product1.jpg')}}" class="img-thumbnail" /></a>
-                <p><a href="#">khom vang </a></p>
-                <p class="price">10.000 vnd</p>
-                <div class="mask">
-                    <a href="#">Xem chi tiết</a>
-                </div>
-            </div>
-            <!--  -->
-            <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                <a href="#"><img src="{{asset('frontend/dist/img/product1.jpg')}}" class="img-thumbnail" /></a>
-                <p><a href="#">khom vang </a></p>
-                <p class="price">10.000 vnd</p>
-                <div class="mask">
-                    <a href="#">Xem chi tiết</a>
-                </div>
-            </div>
-            <!--  -->
-            <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                <a href="#"><img src="{{asset('frontend/dist/img/product1.jpg')}}" class="img-thumbnail" /></a>
-                <p><a href="#">khom vang </a></p>
-                <p class="price">10.000 vnd</p>
-                <div class="mask">
-                    <a href="#">Xem chi tiết</a>
-                </div>
-            </div>
-            <!--  -->
-            <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                <a href="#"><img src="{{asset('frontend/dist/img/product1.jpg')}}" class="img-thumbnail" /></a>
-                <p><a href="#">khom vang </a></p>
-                <p class="price">10.000 vnd</p>
-                <div class="mask">
-                    <a href="#">Xem chi tiết</a>
-                </div>
-            </div>
-            <!--  -->
-            <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                <a href="#"><img src="{{asset('frontend/dist/img/product1.jpg')}}" class="img-thumbnail" /></a>
-                <p><a href="#">khom vang </a></p>
-                <p class="price">10.000 vnd</p>
-                <div class="mask">
-                    <a href="#">Xem chi tiết</a>
-                </div>
-            </div>
-            <!--  -->
-            <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                <a href="#"><img src="{{asset('frontend/dist/img/product1.jpg')}}" class="img-thumbnail" /></a>
-                <p><a href="#">khom vang </a></p>
-                <p class="price">10.000 vnd</p>
-                <div class="mask">
-                    <a href="#">Xem chi tiết</a>
-                </div>
-            </div>
-            <!--  -->
-            <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                <a href="#"><img src="{{asset('frontend/dist/img/product1.jpg')}}" class="img-thumbnail" /></a>
-                <p><a href="#">khom vang </a></p>
-                <p class="price">10.000 vnd</p>
-                <div class="mask">
-                    <a href="#">Xem chi tiết</a>
-                </div>
-            </div>
-            <!--  -->
-            <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                <a href="#"><img src="{{asset('frontend/dist/img/product1.jpg')}}" class="img-thumbnail" /></a>
-                <p><a href="#">khom vang </a></p>
-                <p class="price">10.000 vnd</p>
-                <div class="mask">
-                    <a href="#">Xem chi tiết</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  -->
-<div class="container-fluid mt-5 pl-0 pr-0">
+<!-- danh muc san pham -->
+<div class="container-fluid">
     <div class="row">
 
-        <div class="carousel-item active">
-            <img src="{{asset('frontend/dist/img/banner_4.jpg')}}" alt="" width="100%" height="450px" />
-            <div id="top" class="carousel-caption">
-                <h2 class="display-4">Fresh Fruit</h2>
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="left-sidebar">
 
-                <h2 class="display-2">Ưu đãi đặt biệt</h2>
-                <button type="button" class="btn btn-primary btn-lg">
-                    -50%
-                </button>
+                        <div class="panel-group category-products" id="category">
+                            <!--category-productsr-->
+                            @foreach ($categorys as $Category)
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#category" href="#sportswear">
+                                            <span class="badge pull-left"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                            {{$Category->name}}
+
+                                        </a>
+                                    </h4>
+                                </div>
+
+                                <!-- chidrent -->
+                                <div id="sportswear" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul>
+                                            @foreach ($Category->categoryChildren as $categoryChildren)
+                                            <li><a href="#">{{$categoryChildren->name}} </a></li>
+                                            @endforeach
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <!-- danh sach san pham -->
+        <div class="col-md-10">
+            <div class="product">
+                <div class="product-list row">
+                    @foreach($products as $product)
+                    <div class="product-item col-md-3 col-sm-6 col-xs-12">
+                        <a href="#"><img src="{{$product->feature_img_path}}" class="img-thumbnail"></a>
+                        <p><a href="#">{{$product->name}}</a></p>
+                        <p class="price">{{number_format($product->price)}} vnd</p>
+                        <div class="mask">
+                            <a href="#">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    @endforeach
+                    <!--  -->
 
+                </div>
+                <div class="mx-auto mt-4">
+                    <div class="mx-auto">{{$products->links()}}</div>
+                </div>
+            </div>
+
+        </div>
+        <!--  -->
+    </div>
 </div>
+
+
+<!--  -->
+
+
 <!-- --- -->
 
 

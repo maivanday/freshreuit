@@ -9,9 +9,10 @@
 
     @yield('title')
 
-
-    <link rel="stylesheet" href="{{asset('frontend/dist/css/font-awesome.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('frontend/dist/css/fontawesome.min.css')}}" />
     <link rel="stylesheet" href="{{asset('frontend/dist/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
     @yield('css')
 </head>
@@ -20,6 +21,8 @@
     @include('components.header')
 
     @yield('content')
+
+    @include('components.category_tab')
 
     @include('components.footer')
 

@@ -1,5 +1,8 @@
 <!-- begin footer -->
+@section('css')
+<link rel="stylesheet" href="{{asset('frontend/dist/css/fontawesome.min.css')}}" />
 
+@endsection
 <div class="container-fluid pt-5">
     <div class="row ">
         <div class="col-md-3">
@@ -85,23 +88,26 @@
             <h3 class="footer_title">KẾT NỐI VỚI CHÚNG TÔI</h3>
             <li class="footer-link">
                 <a href="">
-                    <i class="fab fa-facebook"></i>
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
                     facebook
                 </a>
             </li>
             <li class="footer-link">
                 <a href="">
-                    <i class="fab fa-instagram"></i>
-                    ínstagram
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+
+                    instagram
                 </a>
             </li>
             <li class="footer-link">
                 <a href="">
-                    <i class="fab fa-twitter"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
                     twitter
                 </a>
 
+
             </li>
+
 
         </div>
     </div>
