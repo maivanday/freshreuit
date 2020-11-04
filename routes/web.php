@@ -88,4 +88,19 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 // frontend
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'HomeController@index'
+]);
+
+
+Route::get('/category/{name}/{id}', [
+    'as' => 'category.product',
+    'uses' => 'HomeController@showProductCategory'
+]);
+
+Route::get('/product/{name}/{id}', [
+    'as' => 'product.detail',
+    'uses' => 'HomeController@showProductDetail'
+]);

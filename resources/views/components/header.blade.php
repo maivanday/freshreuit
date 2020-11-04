@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
-                <a href="" class="nav-item nav-link active">Trang chủ</a>
+                <a href="{{route('home')}}" class="nav-item nav-link active">Trang chủ</a>
 
                 <a href="" class="nav-item nav-link">Liên hệ</a>
 
