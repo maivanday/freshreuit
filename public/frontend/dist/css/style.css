@@ -160,6 +160,22 @@
 #category_name li:hover a {
     color: #ffffff;
 }
+
+/* product detail*/
+.tag-color {
+    background-color: #18cb18;
+    color: white;
+}
+.set_img {
+    width: 300px !important;
+    height: 300px !important;
+    object-fit: cover !important;
+}
+
+.img-list {
+    padding: 10px !important;
+}
+/* ------------------------------- */
 /* footer */
 
 .footer_title {

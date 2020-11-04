@@ -15,17 +15,36 @@
 
 <!-- danh muc san pham -->
 <div class="container-fluid">
+
     <div class="row">
         <!-- danh sach san pham -->
-        <div class="col-md-10">
-            <div class="product">
+        <div class="col-md-12 mt-3">
+
+            <div class="product ">
                 <div class="product-list row">
                     @foreach($products as $product)
-                    <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                        <a href="#"><img src="{{$product->feature_img_path}}" class="img-thumbnail"></a>
-                        <p><a href="#">{{$product->name}}</a></p>
-                        <p class="price">{{number_format($product->price)}} vnd</p>
+                    <div class="product-item col-md-6  col-xs-12">
+                        <img class="set_img" src="{{$product->feature_img_path}}">
+                        <div class="row ml-1">
+                            @foreach($product->productImage as $imgList)
+                            <img src="{{$imgList->image_path}}" class="img-list">
+                            @endforeach
+                        </div>
 
+
+                    </div>
+                    <div class="col-md-6">
+                        <h2> CHI TIẾT SẢN PHẨM</h2>
+                        <p>Tên sản phẩm: {{$product->name}}</p>
+                        <p>Loại sản phẩm: {{$product->category->name}}</p>
+                        <p class="price">Giá sản phẩm: {{number_format($product->price)}} vnd</p>
+                        <span>Tag</span>
+                        @foreach($product->tags as $productTag)
+                        <span class="tag-color"> {{$productTag->name}}</span>
+                        @endforeach
+                        <br>
+                        <button>Mua ngay</button>
+                        <p>{{$product->content}}</p>
                     </div>
 
                     @endforeach

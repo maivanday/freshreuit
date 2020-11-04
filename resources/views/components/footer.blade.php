@@ -3,6 +3,26 @@
 <link rel="stylesheet" href="{{asset('frontend/dist/css/fontawesome.min.css')}}" />
 
 @endsection
+<!--  -->
+<div class="container-fluid mt-5 pl-0 pr-0">
+    <div class="row">
+
+        <div class="carousel-item active">
+            <img src="{{asset('frontend/dist/img/banner_4.jpg')}}" alt="" width="100%" height="450px" />
+            <div id="top" class="carousel-caption">
+                <h2 class="display-4">Fresh Fruit</h2>
+
+                <h2 class="display-2">Ưu đãi đặt biệt</h2>
+                <button type="button" class="btn btn-primary btn-lg">
+                    -50%
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  -->
+
+
 <div class="container-fluid pt-5">
     <div class="row ">
         <div class="col-md-3">
