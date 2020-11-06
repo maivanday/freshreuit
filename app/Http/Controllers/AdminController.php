@@ -2,26 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+
     public function loginAdmin()
     {
-        if (auth()->check()) {
-            return redirect()->to('home');
-        }
         return view('login');
     }
 
     public function postLoginAdmin(request $request)
     {
-        $remember = $request->has('remember_me') ? true : false;
-        if (auth()->attempt([
+        $array = [
+
             'email' => $request->email,
             'password' => $request->password
-        ], $remember)) {
-            return redirect()->to('home');
+
+        ];
+        if (Auth::attempt($array)) {
+            return view('home');
+        } else {
+            return redirect()->to('login');
         }
+    }
+    //--------------
+    public function register()
+    {
+        return view('register');
+    }
+
+    public function postRegister(request $request)
+    {
+        //dd($request);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->to('login');
     }
 }

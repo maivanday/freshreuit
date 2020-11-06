@@ -43,7 +43,7 @@
                         <span class="tag-color"> {{$productTag->name}}</span>
                         @endforeach
                         <br>
-                        <button>Mua ngay</button>
+                        <button type="button" class="btn btn-success mt-3 mb-3">Mua ngay</button>
                         <p>{{$product->content}}</p>
                     </div>
 

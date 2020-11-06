@@ -76,7 +76,7 @@
                           </div>
                           <div class="form-group">
                               <label for="">Nội dung</label>
-                              <textarea class="form-control tinymce_editor_init" name="contents" rows="4">{{$product->content}} </textarea>
+                              <textarea class="form-control " name="contents" rows="4">{{$product->content}} </textarea>
                           </div>
 
 
@@ -96,7 +96,7 @@
   @endsection
   @section('js')
   <script src="{{asset('vendors/select2/select2.min.js')}}"></script>
-  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <!-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script> -->
   <script src="{{asset('admin_user/product/add/add.js')}}"></script>
 
 

@@ -153,12 +153,13 @@
     text-decoration: none;
     font-size: 23px;
     color: #000000;
+    display: block;
+    cursor: pointer;
 }
-#category_name li:hover {
+#category_name li a:hover,
+#category_name li a.active {
     background-color: #13cc0b;
-}
-#category_name li:hover a {
-    color: #ffffff;
+    color: #fff;
 }
 
 /* product detail*/

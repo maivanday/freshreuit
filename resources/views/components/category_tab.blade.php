@@ -65,7 +65,7 @@
     <!-- Tab panes -->
     <div class="tab-content">
         @foreach ($categorys as $indexProduct =>$categoryItemProduct)
-        <div class=" tab-pane fade active in {{$indexProduct == 0 ? 'active in':''}}" id="category_{{$categoryItemProduct->id}}">
+        <div class=" tab-pane fade active show {{$indexProduct == 0 ? 'active':''}}" id="category_{{$categoryItemProduct->id}}">
             </<br>
             <div class="row">
 
@@ -80,7 +80,9 @@
                                 <p>{{$productItemTab->name}}</p>
                                 <div class="mask">
 
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="{{route('product.detail',
+                                ['name'=>$productItemTab->name,
+                                'id'=>$productItemTab->id])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
 
                             </div>

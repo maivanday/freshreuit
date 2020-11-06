@@ -69,13 +69,11 @@
                           </div>
                           <div class="form-group">
                               <label for="">Nội dung</label>
-                              <textarea class="form-control tinymce_editor_init @error('contents') is-invalid @enderror" name="contents" rows="4">{{old('contents')}}</textarea>
+                              <textarea class="form-control  @error('contents') is-invalid @enderror" name="contents" rows="4">{{old('contents')}}</textarea>
                               @error('contents')
                               <div class="alert alert-danger">{{ $message }}</div>
                               @enderror
                           </div>
-
-
 
 
                           <button type="submit" class="btn btn-primary">Submit</button>
@@ -92,7 +90,7 @@
   @endsection
   @section('js')
   <script src="{{asset('vendors/select2/select2.min.js')}}"></script>
-  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <!-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script> -->
   <script src="{{asset('admin_user/product/add/add.js')}}"></script>
 
 

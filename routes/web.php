@@ -11,17 +11,50 @@
 |
 */
 //upload file
+
+
+
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
+
+
 Route::get('/admin', 'AdminController@loginAdmin');
 Route::POST('/admin', 'AdminController@postLoginAdmin');
-
-
-Route::get('/home', function () {
+Route::get('/homeAdmin', function () {
     return view('home');
 });
+
+
+
+Route::get('/login', [
+    'as' => 'login.admin',
+    'uses' => 'AdminController@loginAdmin'
+]);
+
+
+Route::POST('/login', [
+    'as' => 'login.postAdmin',
+    'uses' => 'AdminController@postLoginAdmin'
+]);
+
+
+//---------------------
+
+Route::get('/register', [
+    'as' => 'register',
+    'uses' => 'AdminController@register'
+]);
+
+
+//----------------------------
+
+Route::POST('/register', [
+    'as' => 'register.postRegister',
+    'uses' => 'AdminController@postRegister'
+]);
+
 
 
 Route::group(['prefix' => 'admin'], function () {
