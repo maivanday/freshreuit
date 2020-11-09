@@ -15,6 +15,7 @@ class HomeController extends Controller
         $products = Product::latest()->paginate(12);
         return view('frontend.home.index', compact('categorys', 'products'));
     }
+
     //frontend
     public function showProductCategory($name, $categoryId)
     {
@@ -27,5 +28,12 @@ class HomeController extends Controller
         $categorys = Category::where('parent_id', 0)->get();
         $products = Product::where('id', $id)->get();
         return view('frontend.product.productDetail', compact('categorys', 'products'));
+    }
+
+    public function showUser()
+    {
+        $categorys = Category::where('parent_id', 0)->get();
+        $products = Product::latest()->paginate(12);
+        return view('frontend.home.home_user', compact('categorys', 'products'));
     }
 }

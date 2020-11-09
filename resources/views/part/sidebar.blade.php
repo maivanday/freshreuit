@@ -14,7 +14,8 @@
                 <img src="{{asset('admin_lte/dist/img/admin.png' )}} " class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Admin</a>
+                <span class="text-primary">{{Auth::user()->name}}</span>
+                <a href="{{route('logout')}}" class="d-block"> Logout</a>
             </div>
         </div>
 

@@ -1,48 +1,5 @@
 <!--category-tab-->
 
-
-<!-- <div class="container">
-
-
-    <div class="col-sm-12">
-        <ul class="nav nav-tabs">
-            @foreach ($categorys as $indexCategory =>$categoryItem)
-            <li class="{{$indexCategory == 0 ? 'active' : ''}} "><a href="#category_{{$categoryItem->id}}" data-toggle="tab">{{ $categoryItem->name}}</a></li>
-            @endforeach
-        </ul>
-    </div>
-     ---- -->
-
-
-<!-- <div class="row">
-    @foreach ($categorys as $indexProduct =>$categoryItemProduct)
-    <div class="  tab-pane fade active in {{$indexProduct == 0 ? 'active in':''}}" id="category_{{$categoryItemProduct->id}}">
-        @foreach($categoryItemProduct->products as $productItemTab)
-
-        <div class="col-md-1">
-            <div class="product-image-wrapper">
-                <div class="single-products">
-                    <div class="productinfo text-center">
-                        <img src="{{ $productItemTab->feature_img_path}}" />
-                        <h2>{{ number_format( $productItemTab->price)}}</h2>
-                        <p>{{$productItemTab->name}}</p>
-                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-    @endforeach
-
-
-
-</div> -->
-
-
-<!-- </div>  -->
-<!--  -->
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 text-center">

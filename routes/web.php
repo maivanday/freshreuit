@@ -20,23 +20,40 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 
 
-Route::get('/admin', 'AdminController@loginAdmin');
-Route::POST('/admin', 'AdminController@postLoginAdmin');
-Route::get('/homeAdmin', function () {
-    return view('home');
-});
+// Route::get('/admin', 'AdminController@loginAdmin');
+// Route::POST('/admin', 'AdminController@postLoginAdmin');
 
+
+// Route::get('/homeAdmin', [
+//     'as' => 'homeAdmin',
+//     'uses' => 'AdminController@loginSuccess'
+// ]);
+Route::get('/admin', [
+    'as' => 'admin.show',
+    'uses' => 'AdminController@showHomeAdmin',
+
+])->middleware('role');
 
 
 Route::get('/login', [
     'as' => 'login.admin',
-    'uses' => 'AdminController@loginAdmin'
+    'uses' => 'AdminController@loginAdmin',
+
 ]);
+
+Route::get('/logout', [
+    'as' => 'logout',
+    'uses' => 'AdminController@logout',
+
+]);
+
+
 
 
 Route::POST('/login', [
     'as' => 'login.postAdmin',
-    'uses' => 'AdminController@postLoginAdmin'
+    'uses' => 'AdminController@postLoginAdmin',
+
 ]);
 
 
@@ -57,7 +74,9 @@ Route::POST('/register', [
 
 
 
-Route::group(['prefix' => 'admin'], function () {
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'role'], function () {
     Route::group(['prefix' => 'categories'], function () {
 
         Route::get('/', [
@@ -126,6 +145,12 @@ Route::get('/', [
     'as' => 'home',
     'uses' => 'HomeController@index'
 ]);
+
+Route::get('/home/user', [
+    'as' => 'home.user',
+    'uses' => 'HomeController@showUser',
+]);
+
 
 
 Route::get('/category/{name}/{id}', [

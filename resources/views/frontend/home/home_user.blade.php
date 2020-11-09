@@ -1,7 +1,7 @@
-@extends('layouts.frontend')
+@extends('layouts.homeuser')
 
 @section('title')
-<title>Home</title>
+<title>Home user</title>
 @endsection
 
 @section('css')

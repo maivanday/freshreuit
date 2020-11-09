@@ -24,10 +24,15 @@ class AdminController extends Controller
 
         ];
         if (Auth::attempt($array)) {
-            return view('home');
+
+            return redirect(route('home.user'));
         } else {
             return redirect()->to('login');
         }
+    }
+    public function showHomeAdmin()
+    {
+        return view('home');
     }
     //--------------
     public function register()
@@ -44,5 +49,13 @@ class AdminController extends Controller
             'password' => Hash::make($request['password']),
         ]);
         return redirect()->to('login');
+    }
+
+    //
+    public function logout(request $request)
+    {
+        $request->session()->forget('email');
+        $request->session()->forget('password');
+        return redirect('/login');
     }
 }

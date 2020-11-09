@@ -41,9 +41,9 @@
                     <div id="register-box" class="col-md-12">
                         <form id="register-form" class="form" action="" method="post">
                             @csrf
-                            <h3 class="text-center text-info">Dang ky</h3>
+                            <h3 class="text-center text-info">Đăng ký</h3>
                             <div class="form-group">
-                                <label for="name" class="text-info">Nhap ten</label><br>
+                                <label for="name" class="text-info">Username</label><br>
                                 <input type="text" name="name" id="name" class="form-control">
                             </div>
                             <div class="form-group">
@@ -57,10 +57,10 @@
                             </div>
                             <div class="form-group">
 
-                                <input type="submit" name="register" class="btn btn-info btn-md" value="dang ky">
+                                <input type="submit" name="register" class="btn btn-info btn-md" value="Đăng ký">
                             </div>
                             <div id="login-link" class="text-right">
-                                <a href="" class="text-info"> dang nhap</a>
+                                <a href="{{ route('home')}}" class="text-info"> Trở về</a>
                             </div>
 
                         </form>
