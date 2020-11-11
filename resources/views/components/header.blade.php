@@ -12,7 +12,7 @@
 
                 <a href="" class="nav-item nav-link">Liên hệ</a>
 
-                <a href="" class="nav-item nav-link">Giỏ hàng</a>
+
 
                 <a href="{{route('register')}}" class="nav-item nav-link">Đăng ký</a>
 

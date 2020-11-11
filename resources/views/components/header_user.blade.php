@@ -9,15 +9,14 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
                 <a href="{{route('home')}}" class="nav-item nav-link active">Giới thiệu</a>
+
                 <a href="#" class="nav-item nav-link active">xinchao! {{ Auth::user()->name}}</a>
 
-                <!-- <a href="" class="nav-item nav-link">logout</a> -->
+                <a href="{{route('product.showCart')}}" class="nav-item nav-link">Giỏ hàng</a>
 
-                <a href="" class="nav-item nav-link">Giỏ hàng</a>
-                <!--
-                <a href="{{route('register')}}" class="nav-item nav-link">Đăng ký</a> -->
 
-                <a href="{{route('logout')}}" class="nav-item nav-link">Logout</a>
+
+                <a href="{{route('logout')}}" class="nav-item nav-link">Đăng xuất</a>
             </div>
         </div>
     </div>

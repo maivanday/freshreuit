@@ -56,6 +56,9 @@ class AdminController extends Controller
     {
         $request->session()->forget('email');
         $request->session()->forget('password');
+        Auth::logout();
         return redirect('/login');
     }
+
+    //
 }

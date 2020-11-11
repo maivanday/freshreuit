@@ -162,3 +162,14 @@ Route::get('/product/{name}/{id}', [
     'as' => 'product.detail',
     'uses' => 'HomeController@showProductDetail'
 ]);
+
+
+Route::get('/product/add-to-cart/{id}', [
+    'as' => 'product.addToCart',
+    'uses' => 'HomeController@addToCart'
+]);
+
+Route::get('/product/showCart', [
+    'as' => 'product.showCart',
+    'uses' => 'HomeController@showCart'
+]);

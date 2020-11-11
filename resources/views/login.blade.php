@@ -26,8 +26,8 @@
             padding: 20px;
         }
 
-        #login .container #login-row #login-column #login-box #login-form #register-link {
-            margin-top: -85px;
+        #login .container #login-row #login-column #login-box #login-form #back-home-link {
+            margin-top: -49px;
         }
     </style>
 </head>
@@ -51,12 +51,12 @@
                                 <input type="password" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span>
-                                        <input id="remember-me" name="remember_me" type="checkbox"></span></label><br>
+                                <!-- <label for="remember-me" class="text-info"><span>Remember me</span> <span>
+                                        <input id="remember-me" name="remember_me" type="checkbox"></span></label><br> -->
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="Đăng nhập">
                             </div>
-                            <div id="register-link" class="text-right">
-                                <a href="" class="text-info"> đăng ký</a>
+                            <div id="back-home-link" class="text-right">
+                                <a href="{{ route('home')}}" class="text-info"> Trở về</a>
                             </div>
 
                         </form>

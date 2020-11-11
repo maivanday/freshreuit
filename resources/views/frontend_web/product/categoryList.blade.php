@@ -1,7 +1,7 @@
-@extends('layouts.homeuser')
+@extends('layouts.product')
 
 @section('title')
-<title>Home user</title>
+<title>Category_List</title>
 @endsection
 
 @section('css')
@@ -12,84 +12,6 @@
 
 @section('content')
 
-<div id="slides" class="carousel slide" data-ride="carousel">
-    <ul class="carousel-indicators">
-        <li data-target="#slides" data-slide-to="0" class="active"></li>
-        <li data-target="#slides" data-slide-to="1"></li>
-        <li data-target="#slides" data-slide-to="2"></li>
-
-    </ul>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_2.jpg')}}" alt="" />
-            <div class="carousel-caption">
-                <h2 class="display-4">Fresh Fruit</h2>
-
-                <h2 class="display-2">Trái cây tươi mát</h2>
-                <button type="button" class="btn btn-primary btn-lg">
-                    MUA NGAY
-                </button>
-            </div>
-        </div>
-
-        <div class="carousel-item">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_1.jpg')}}" alt="" />
-        </div>
-        <div class="carousel-item">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_4.jpg')}}" alt="" />
-        </div>
-    </div>
-</div>
-<!-- jumbotron -->
-<!-- <div class="container-fluid">
-      <div class="jumbotron">
-        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-10">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad dolore
-            deleniti illum dolores sunt! Magnam, quasi minus. Eligendi omnis
-            beatae aperiam dolorum dicta amet delectus, enim obcaecati veritatis
-            consequuntur qui.
-          </p>
-        </div>
-        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-10">
-          <a href="#">
-            <button type="button" class="btn btn-outline-secondary">
-              Dang ky ngay
-            </button>
-          </a>
-        </div>
-      </div>
-    </div> -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-6 col-xl-4 pl-0 pr-0">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/banner_1.jpg')}}" alt="" />
-            <div class="carousel-caption">
-                <button type="button" class="btn btn-primary btn-sm btn-responsive">
-                    MUA NGAY
-                </button>
-            </div>
-        </div>
-        <div class="col-sm-6 col-xl-4 pl-0 pr-0">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/banner_2.jpg')}}" alt="" />
-            <div class="carousel-caption">
-                <button type="button" class="btn btn-primary btn-sm btn-responsive">
-                    MUA NGAY
-                </button>
-            </div>
-        </div>
-
-        <div class="col-12 col-xl-4 pr-0 pl-0">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/banner_3.jpg')}}" alt="" />
-            <div class="carousel-caption">
-                <button type="button" class="btn btn-primary btn-sm btn-responsive">
-                    MUA NGAY
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- -------------------- -->
 <div class="container">
     <div class="row">
         <div class="col-12 text-center">
@@ -151,7 +73,7 @@
                         <div class="mask">
                             <a href="{{route('product.detail',
                                 ['name'=>$product->name,
-                                'id'=>$product->id])}}">Xem chi tiết</a>
+                                'id'=>$product->id])}}"><i class="fa fa-shopping-cart"></i>Xem chi tiết</a>
                         </div>
                     </div>
                     @endforeach
@@ -178,6 +100,6 @@
 
 
 
-
+<!-- ----------------------footer -->
 
 @endsection

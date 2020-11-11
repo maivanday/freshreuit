@@ -39,7 +39,7 @@
 
                                     <a href="{{route('product.detail',
                                 ['name'=>$productItemTab->name,
-                                'id'=>$productItemTab->id])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                'id'=>$productItemTab->id])}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Xem chi tiết</a>
                                 </div>
 
                             </div>

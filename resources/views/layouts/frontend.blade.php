@@ -34,6 +34,9 @@
     <script src="{{asset('frontend/dist/js/jquery-3.5.1.min.js')}}"> </script>
     <script src="{{asset('frontend/dist/js/popper.min.js')}}"></script>
     <script src="{{asset('frontend/dist/js/bootstrap.min.js')}}"></script>
+
+
+
     @yield('js')
 </body>
 

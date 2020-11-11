@@ -1,4 +1,4 @@
-@extends('layouts.product')
+@extends('layouts.frontend')
 
 @section('title')
 <title>Product Detail</title>
@@ -43,7 +43,7 @@
                         <span class="tag-color"> {{$productTag->name}}</span>
                         @endforeach
                         <br>
-                        <button type="button" class="btn btn-success mt-3 mb-3">Mua ngay</button>
+                        <a href="#" class="btn btn-success mt-3 mb-3 addProduct">Mua ngay </a>
                         <p>{{$product->content}}</p>
                     </div>
 
@@ -61,6 +61,20 @@
 
 
 <!--  -->
+@section('js')
+<script>
+    function addProduct(event) {
+        event.preventDefault();
+        alert('Bạn cần đăng nhập để thực hiện chức năng này');
+
+    }
+    $(function() {
+        $('.addProduct').on('click', addProduct);
+    });
+</script>
+
+
+@endsection
 
 
 <!-- --- -->

@@ -73,7 +73,7 @@
                         <div class="mask">
                             <a href="{{route('product.detail',
                                 ['name'=>$product->name,
-                                'id'=>$product->id])}}">Xem chi tiết</a>
+                                'id'=>$product->id])}}"><i class="fa fa-shopping-cart"></i>Xem chi tiết</a>
                         </div>
                     </div>
                     @endforeach
