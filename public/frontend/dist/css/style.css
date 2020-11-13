@@ -209,3 +209,11 @@
     font-weight: 700;
     font-size: 1.125rem;
 }
+
+/* add to cart */
+.mask .add-to-cart {
+    color: #fff;
+    position: absolute;
+    top: 117px !important;
+    margin-left: -74px;
+}

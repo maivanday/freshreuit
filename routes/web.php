@@ -162,14 +162,24 @@ Route::get('/product/{name}/{id}', [
     'as' => 'product.detail',
     'uses' => 'HomeController@showProductDetail'
 ]);
+// gio hang
 
-
-Route::get('/product/add-to-cart/{id}', [
+Route::get('/home/user/product/add-to-cart/{id}', [
     'as' => 'product.addToCart',
     'uses' => 'HomeController@addToCart'
 ]);
 
-Route::get('/product/showCart', [
+Route::get('/home/user/product/showCart', [
     'as' => 'product.showCart',
     'uses' => 'HomeController@showCart'
+]);
+//update cart
+Route::get('/home/user/product/updateCart', [
+    'as' => 'product.updateCart',
+    'uses' => 'HomeController@updateCart'
+]);
+//delete cart
+Route::get('/home/user/product/deleteCart', [
+    'as' => 'product.deleteCart',
+    'uses' => 'HomeController@deleteCart'
 ]);

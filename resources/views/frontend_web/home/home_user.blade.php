@@ -7,11 +7,9 @@
 @section('css')
 
 <link rel="stylesheet" href="{{asset('frontend/dist/css/style.css')}}" />
-
 @endsection
 
 @section('content')
-
 <div id="slides" class="carousel slide" data-ride="carousel">
     <ul class="carousel-indicators">
         <li data-target="#slides" data-slide-to="0" class="active"></li>
@@ -151,11 +149,14 @@
                         <div class="mask">
                             <a href="{{route('product.detail',
                                 ['name'=>$product->name,
-                                'id'=>$product->id])}}"><i class="fa fa-shopping-cart"></i>Xem chi tiết</a>
+                                'id'=>$product->id])}}">Xem chi tiết</a>
+                            <br>
+                            <a href="#" data-url="{{route('product.addToCart',['id'=>$product->id])}}" class="add-to-cart btn btn-success"><i class="fa fa-shopping-cart"></i>Them vao gio hang</a>
                         </div>
                     </div>
                     @endforeach
                     <!--  -->
+
 
                 </div>
                 <div class="mx-auto mt-4">
@@ -169,15 +170,8 @@
 </div>
 
 
-<!--  -->
-
-
-<!-- --- -->
-
-
-
-
-
-
-
+@endsection
+<!-- gio hang -->
+@section('js')
+<script src=" {{asset('frontend/dist/js/addToCart.js')}}"></script>
 @endsection

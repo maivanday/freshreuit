@@ -47,6 +47,7 @@ class HomeController extends Controller
     //gio hang
     public function addToCart($id)
     {
+
         $product = Product::find($id);
         $cart =   session()->get('cart');
         if (isset($cart[$id])) {
@@ -56,6 +57,7 @@ class HomeController extends Controller
                 'name' => $product->name,
                 'price' => $product->price,
                 'quantity' => 1,
+                'image' => $product->feature_img_path,
             ];
         }
         session()->put('cart', $cart);
@@ -67,7 +69,32 @@ class HomeController extends Controller
 
     public function showCart()
     {
-        echo "<pre>";
-        print_r(session()->get('cart'));
+        $carts = session()->get('cart');
+        return view('frontend_web.product.addToCart', compact('carts'));
+    }
+    //update
+    public function updateCart(Request $request)
+    {
+        if ($request->id && $request->quantity) {
+            $carts = session()->get('cart');
+            $carts[$request->id]['quantity'] = $request->quantity;
+            session()->put('cart', $carts);
+            $carts = session()->get('cart');
+            $cartUpdate = view('frontend_web/product/cartContent', compact('carts'))->render();
+            return response()->json(['cartUpdate' => $cartUpdate, 'code' => 200], 200);
+        }
+    }
+    //delete cart
+    public function deleteCart(request $request)
+    {
+        if ($request->id) {
+            $carts = session()->get('cart');
+            unset($carts[$request->id]);
+
+            session()->put('cart', $carts);
+            $carts = session()->get('cart');
+            $cartUpdate = view('frontend_web/product/cartContent', compact('carts'))->render();
+            return response()->json(['cartUpdate' => $cartUpdate, 'code' => 200], 200);
+        }
     }
 }

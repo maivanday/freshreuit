@@ -43,7 +43,8 @@
                         <span class="tag-color"> {{$productTag->name}}</span>
                         @endforeach
                         <br>
-                        <a href="#" data-url="{{ route('product.addToCart',['id'=>$product->id])}}" class="btn btn-success mt-3 mb-3 add_to_cart">Mua ngay </a>
+                        <a href="#" data-url="{{route('product.addToCart',['id'=>$product->id])}}" class="add-to-cart btn btn-success mt-3 mb-3"><i class="fa fa-shopping-cart"></i>Them vao gio hang</a>
+
                         <p>{{$product->content}}</p>
                     </div>
 
@@ -61,38 +62,7 @@
 
 
 <!--  -->
-@section('js')
-<script>
-    function addToCart(event) {
-        event.preventDefault();
 
-        let urlCart = $(this).data('url');
-
-        $.ajax({
-            type: "GET",
-            url: urlCart,
-            dataType: 'json',
-            success: function(data) {
-                if (data.code === 200) {
-                    alert('them san pham thanh cong')
-
-                }
-
-            },
-            error: function() {
-
-            }
-        });
-
-
-    }
-    $(function() {
-        $('.add_to_cart').on('click', addToCart);
-    });
-</script>
-
-
-@endsection
 
 
 <!-- --- -->
@@ -103,4 +73,8 @@
 
 <!-- ----------------------footer -->
 
+@endsection
+
+@section('js')
+<script src=" {{asset('frontend/dist/js/addToCart.js')}}"></script>
 @endsection

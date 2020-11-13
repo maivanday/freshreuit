@@ -73,7 +73,10 @@
                         <div class="mask">
                             <a href="{{route('product.detail',
                                 ['name'=>$product->name,
-                                'id'=>$product->id])}}"><i class="fa fa-shopping-cart"></i>Xem chi tiết</a>
+                                'id'=>$product->id])}}">Xem chi tiết</a>
+                            <br>
+                            <a href="#" data-url="{{route('product.addToCart',['id'=>$product->id])}}" class="add-to-cart btn btn-success"><i class="fa fa-shopping-cart"></i>Them vao gio hang</a>
+
                         </div>
                     </div>
                     @endforeach
@@ -102,4 +105,7 @@
 
 <!-- ----------------------footer -->
 
+@endsection
+@section('js')
+<script src=" {{asset('frontend/dist/js/addToCart.js')}}"></script>
 @endsection
