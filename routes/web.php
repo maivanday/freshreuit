@@ -178,8 +178,14 @@ Route::get('/home/user/product/updateCart', [
     'as' => 'product.updateCart',
     'uses' => 'HomeController@updateCart'
 ]);
+
 //delete cart
 Route::get('/home/user/product/deleteCart', [
     'as' => 'product.deleteCart',
     'uses' => 'HomeController@deleteCart'
+]);
+//check
+Route::get('/home/user/product/checkCart', [
+    'as' => 'product.checkCart',
+    'uses' => 'HomeController@checkCart'
 ]);

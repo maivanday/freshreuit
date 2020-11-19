@@ -90,11 +90,19 @@ class HomeController extends Controller
         if ($request->id) {
             $carts = session()->get('cart');
             unset($carts[$request->id]);
-
             session()->put('cart', $carts);
             $carts = session()->get('cart');
             $cartUpdate = view('frontend_web/product/cartContent', compact('carts'))->render();
             return response()->json(['cartUpdate' => $cartUpdate, 'code' => 200], 200);
         }
+    }
+    //check cart
+    public function checkCart(Request $request)
+    {
+        $users = Auth::user();
+
+        $carts = session()->get('cart');
+
+        return view('frontend_web.product.checkCart', compact('carts', 'users'));
     }
 }

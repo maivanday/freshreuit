@@ -18,7 +18,10 @@
     <div class="cart_wrapper">
 
         @include('frontend_web/product/cartContent');
+
     </div>
+
+
 
 
 
@@ -47,7 +50,7 @@
 
                     if (data.code === 200) {
                         $('.cart_wrapper').html(data.cartUpdate);
-                        alert('Cập nhật thành công');
+
                     }
                 },
                 error: function() {

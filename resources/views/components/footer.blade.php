@@ -4,7 +4,7 @@
 
 @endsection
 <!--  -->
-<div class="container-fluid mt-5 pl-0 pr-0">
+<div class="container-fluid mt-5 ">
     <div class="row">
 
         <div class="carousel-item active">
@@ -136,10 +136,10 @@
 
 <div class="container-fluid ">
     <div class="row ">
-        <div class="col-12">
-            <div class="copyright ">
-                <p class="bg-success text-white">@2020 Bản quyền thuộc về FreshFruit</p>
-            </div>
+        <div class="col-12 copyright pl-0 pr-0">
+
+            <p class="bg-success text-white">@2020 Bản quyền thuộc về FreshFruit</p>
+
         </div>
     </div>
 </div>

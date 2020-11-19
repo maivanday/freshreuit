@@ -29,17 +29,6 @@ $(function(){
 }
 );
 //
-// update cart
 
-
-        function cartUpdate(event) {
-            event.preventDefault();
-            alert('update cart');
-
-        }
-
-        $(function() {
-            $(document).on('click', '.cart_update', cartUpdate);
-        });
 
 

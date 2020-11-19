@@ -14,8 +14,6 @@
 
                 <a href="{{route('product.showCart')}}" class="nav-item nav-link">Giỏ hàng</a>
 
-
-
                 <a href="{{route('logout')}}" class="nav-item nav-link">Đăng xuất</a>
             </div>
         </div>

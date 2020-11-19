@@ -1,4 +1,4 @@
-@extends('layouts.homeuser')
+@extends('layouts.product')
 
 @section('title')
 <title>Home user</title>

@@ -47,7 +47,12 @@
                 </tbody>
             </table>
             <div class="col-md-12">
-                <h4>Tổng tiền thanh toán: {{number_format($total)}} vnd</h4>
+                <div class="row">
+                    <h4>Tổng tiền thanh toán: {{number_format($total)}} vnd</h4>
+                    <a href="{{route('product.checkCart')}}" class="btn btn-primary ml-5">Dat hang</a>
+
+
+                </div>
             </div>
         </div>
     </div>
