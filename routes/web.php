@@ -189,3 +189,11 @@ Route::get('/home/user/product/checkCart', [
     'as' => 'product.checkCart',
     'uses' => 'HomeController@checkCart'
 ]);
+
+//update address customer
+
+// Route::resource('checkCart', 'CustomerController');
+Route::POST('/home/user/product/checkCart', [
+    'as' => 'checkCart.store',
+    'uses' => 'CustomerController@store'
+]);

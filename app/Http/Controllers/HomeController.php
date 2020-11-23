@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Http\Requests\customerRequest;
+
 use App\category;
 use App\product;
-
+use App\customer;
+use App\Http\Requests\customerRequest as RequestsCustomerRequest;
 
 class HomeController extends Controller
 {

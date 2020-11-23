@@ -31,7 +31,7 @@
     <script src="{{asset('frontend/dist/js/jquery-3.5.1.min.js')}}"> </script>
 
 
-    <script>
+    <!-- <script>
         function cartUpdate(event) {
             event.preventDefault();
             let urlUpdate = $('.update_cart_url').data('url');
@@ -94,7 +94,9 @@
             $(document).on('click', '.cart_delete', cartDelete);
 
         });
-    </script>
+    </script> -->
+    <script src="{{asset('frontend/dist/js/addToCart.js')}}"></script>
+
     <script src="{{asset('frontend/dist/js/jquery-3.5.1.min.js')}}"> </script>
     <script src="{{asset('frontend/dist/js/popper.min.js')}}"></script>
     <script src="{{asset('frontend/dist/js/bootstrap.min.js')}}"></script>
