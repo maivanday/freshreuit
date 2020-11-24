@@ -197,3 +197,8 @@ Route::POST('/home/user/product/checkCart', [
     'as' => 'checkCart.store',
     'uses' => 'CustomerController@store'
 ]);
+//
+Route::POST('/home/user/product/checkCart', [
+    'as' => 'checkCart.storeOrder',
+    'uses' => 'HomeController@storeOrder'
+]);

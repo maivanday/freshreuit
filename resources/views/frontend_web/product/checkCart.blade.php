@@ -77,13 +77,15 @@
                         <label class="anim">
                             @if( count($users->customers) >0 )
                             <ul style="list-style: none;">
-                                @foreach( $users->customers as $customer )
+                                @foreach( $users->customers as $key => $customer )
                                 <li>
                                     <!-- <input type="radio" class="rdoAddress" name="rdoaddress" @if($customer->active == 1) checked @endif value="{{$customer->email}}" style="float: left;">  -->
-                                    <input type="checkbox" class="rdoAddress" name="{{$customer->id}}">
+
+
+                                    <input type="radio" class="checkAddress" name="checkAddress" value="{{$customer->email}}">
                                     <span>
-                                        {{ $users->name }} | {{ $customer->phone }}
-                                        <p>{{ $customer->address }}</p>
+                                        <i class="name{{$key}}"> {{ $users->name }} </i>| <i class="phone{{$key}}">{{ $customer->phone }} </i>
+                                        <p class="address{{$key}}">{{ $customer->address }}</p>
 
                                     </span>
                                 </li>
@@ -135,7 +137,7 @@
                     <div>
                         <span class="row">
                             <p class="font-weight-bold">Tổng Thanh Toán: &nbsp</p>
-                            <p>{{ number_format($total + 20000) }} VNĐ</p>
+                            <p class="total">{{ number_format($total + 20000) }} VNĐ</p>
 
                         </span>
 

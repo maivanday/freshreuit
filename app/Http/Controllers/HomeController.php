@@ -9,6 +9,12 @@ use App\Http\Requests\customerRequest;
 use App\category;
 use App\product;
 use App\customer;
+use App\order;
+use App\orderItem;
+use App\cart;
+
+
+
 use App\Http\Requests\customerRequest as RequestsCustomerRequest;
 
 class HomeController extends Controller
@@ -107,5 +113,27 @@ class HomeController extends Controller
         $carts = session()->get('cart');
 
         return view('frontend_web.product.checkCart', compact('carts', 'users'));
+    }
+    // store order
+    public function storeOrder(Request $request)
+
+    {
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+        $order = Order::create($data);
+        $orderId = $order->id;
+        // $orderProducts = OrderItem::where('product_id', $orderId);
+        $orderItem = [];
+
+        $carts = session()->get('cart');
+        foreach ($carts as $cartItem) {
+
+            $orderItem['oder_id'] = $orderId;
+            //  $orderItem['product_id'] = $cart->id;
+            $orderItem['quantity'] = $cartItem['quantity'];
+            $orderItem['price'] = $cartItem['price'];
+            OrderItem::create($orderItem);
+        }
+        return response()->json(' da mua thanh cong', 200);
     }
 }

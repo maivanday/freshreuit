@@ -34,12 +34,64 @@ function updateInfo(event){
             })
 
 }
+//----------------------
+function payment(event){
+    event.preventDefault();
+      $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+})
+    var email='';
+    var phone='';
+    var address='';
+    var name='';
+    var total=$('.total').text();
+    var checkAddress =$('input[name=checkAddress]');
+    $.each(checkAddress,function(key,value){
+        if(value.checked === true){
+            email=value.value;
+            phone = $('.phone'+key).text();
+            address = $('.address'+key).text();
+            name = $('.name'+key).text();
+
+
+        }
+    });
+    $.ajax({
+        url:'checkCart',
+        data:{
+            name:name,
+            email:email,
+            phone:phone,
+            address:address,
+            price:total,
+
+        },
+        dataType: 'json',
+        type: 'post',
+        success: function(data) {
+            toastr.success(data, 'thong bao');
+                    location.reload();
+
+        }
+
+
+
+    })
+
+
+
+
+
+}
 
 //---------------------------
 
 
 $(function(){
   $('.save').on('click', updateInfo);
+  $('.payment').on('click', payment);
 
 }
 );
