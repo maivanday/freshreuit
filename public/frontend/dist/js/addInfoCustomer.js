@@ -8,6 +8,7 @@ function updateInfo(event){
     }
 })
 
+
                 $.ajax({
 
                 url: 'checkCart',
@@ -22,7 +23,7 @@ function updateInfo(event){
                 dataType: 'json',
                 success: function(data) {
                     $('#address').modal('hide');
-                    toastr.success(data, 'thong bao');
+                    toastr.success(data, 'Cập nhật địa chỉ thành công',{timeOut: 5000});
                     location.reload();
                 },
                 error: function(data) {
@@ -37,6 +38,7 @@ function updateInfo(event){
 //----------------------
 function payment(event){
     event.preventDefault();
+
       $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -71,10 +73,12 @@ function payment(event){
         dataType: 'json',
         type: 'post',
         success: function(data) {
-            toastr.success(data, 'thong bao');
+            toastr.success(data, 'Đặt hàng thành công',{timeOut: 5000});
                     location.reload();
 
-        }
+
+        },
+
 
 
 

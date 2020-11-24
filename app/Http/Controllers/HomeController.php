@@ -126,10 +126,13 @@ class HomeController extends Controller
         $orderItem = [];
 
         $carts = session()->get('cart');
-        foreach ($carts as $cartItem) {
 
-            $orderItem['oder_id'] = $orderId;
-            //  $orderItem['product_id'] = $cart->id;
+
+
+
+        foreach ($carts as $id => $cartItem) {
+            $orderItem['order_id'] = $orderId;
+            $orderItem['product_id'] = $id;
             $orderItem['quantity'] = $cartItem['quantity'];
             $orderItem['price'] = $cartItem['price'];
             OrderItem::create($orderItem);
