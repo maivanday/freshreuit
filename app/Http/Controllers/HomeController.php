@@ -128,8 +128,6 @@ class HomeController extends Controller
         $carts = session()->get('cart');
 
 
-
-
         foreach ($carts as $id => $cartItem) {
             $orderItem['order_id'] = $orderId;
             $orderItem['product_id'] = $id;
@@ -138,5 +136,14 @@ class HomeController extends Controller
             OrderItem::create($orderItem);
         }
         return response()->json(' da mua thanh cong', 200);
+    }
+    // show payment
+    public function showPayment(Request $request)
+    {
+        $users = Auth::user();
+
+        $carts = session()->get('cart');
+
+        return view('frontend_web.product.payment', compact('carts', 'users'));
     }
 }

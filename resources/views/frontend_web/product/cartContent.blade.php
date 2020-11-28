@@ -35,8 +35,8 @@
                         <td>{{ number_format($cartItem['price']*$cartItem['quantity'])}} vnd</td>
 
                         <td>
-                            <a href="" data-id="{{$id}}" class="btn btn-primary cart_update">Cập nhật</a>
-                            <a href="" data-id="{{$id}}" class="btn btn-danger cart_delete">Xóa</a>
+                            <a href="" data-id="{{$id}}" class="btn btn-primary cart_update ">Cập nhật</a>
+                            <a href="" data-id="{{$id}}" class="btn btn-danger cart_delete ">Xóa</a>
 
                         </td>
 
@@ -49,7 +49,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <h4>Tổng tiền thanh toán: {{number_format($total)}} vnd</h4>
-                    <a href="{{route('product.checkCart')}}" class="btn btn-primary ml-5">Dat hang</a>
+                    <a href="{{route('product.checkCart')}}" class="btn btn-primary ml-5">Kiểm tra đơn hàng</a>
 
 
                 </div>

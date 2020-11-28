@@ -44,12 +44,42 @@ function cartDelete(event) {
 
             });
         }
+           function cartUpdate(event) {
+            event.preventDefault();
+            let urlUpdate = $('.update_cart_url').data('url');
+            let id = $(this).data('id');
+            let quantity = $(this).parents('tr').find('input').val();
+
+
+            $.ajax({
+                type: "GET",
+                url: urlUpdate,
+                data: {
+                    id: id,
+                    quantity: quantity
+                },
+                success: function(data) {
+
+                    if (data.code === 200) {
+                        $('.cart_wrapper').html(data.cartUpdate);
+
+                    }
+                },
+                error: function() {
+
+                }
+
+            });
+
+        }
+
 
 //---------------------------
 
 $(function(){
   $('.add-to-cart').on('click', adToCart);
-  $('.add-to-cart').on('click', cartDelete);
+  $('.cart_delete').on('click', cartDelete);
+  $('.cart_update').on('click', cartUpdate);
 }
 );
 //

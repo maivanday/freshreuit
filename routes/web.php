@@ -138,6 +138,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'role'], function () {
             'uses' => 'AdminProductController@delete'
         ]);
     });
+
+    // quản lý đơn hàng
+    Route::get('/order', [
+        'as' => 'order.index',
+        'uses' => 'AdminProductController@showOrder'
+    ]);
+    // quản lý chi tiết đơn hàng
+    Route::get('/order/orderItem', [
+        'as' => 'order.orderItem',
+        'uses' => 'AdminProductController@showOrderItem'
+    ]);
 });
 // frontend
 // Route::get('/', 'HomeController@index');
@@ -193,12 +204,17 @@ Route::get('/home/user/product/checkCart', [
 //update address customer
 
 // Route::resource('checkCart', 'CustomerController');
+// Route::resource('checkCart', 'CustomerController@store');
 Route::POST('/home/user/product/checkCart', [
     'as' => 'checkCart.store',
     'uses' => 'CustomerController@store'
 ]);
-//
-Route::POST('/home/user/product/checkCart', [
+
+Route::get('/home/user/product/checkCart/payment', [
+    'as' => 'checkCart.showPayment',
+    'uses' => 'HomeController@showPayment'
+]);
+Route::POST('/home/user/product/checkCart/payment', [
     'as' => 'checkCart.storeOrder',
     'uses' => 'HomeController@storeOrder'
 ]);

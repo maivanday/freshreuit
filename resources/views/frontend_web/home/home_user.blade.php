@@ -143,7 +143,7 @@
                 <div class="product-list row">
                     @foreach($products as $product)
                     <div class="product-item col-md-3 col-sm-6 col-xs-12">
-                        <a href="#"><img src="{{$product->feature_img_path}}" class="img-thumbnail"></a>
+                        <a href="#"><img src="{{$product->feature_image_path}}" class="img-thumbnail"></a>
                         <p><a href="#">{{$product->name}}</a></p>
                         <p class="price">{{number_format($product->price)}} vnd</p>
                         <div class="mask">

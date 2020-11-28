@@ -7,12 +7,16 @@ use App\product;
 use App\tag;
 use App\productTag;
 use App\productImage;
+use App\order;
+use App\orderItem;
 use Illuminate\Http\Request;
 use App\Components\Recusive;
 use App\Http\Requests\productAddRequest;
 use Storage;
 use App\Traits\StorageImgTrait;
 use DB;
+use Illuminate\Support\Facades\Log;
+
 
 class AdminProductController extends Controller
 
@@ -24,6 +28,9 @@ class AdminProductController extends Controller
     private $productImage;
     private $tag;
     private $productTag;
+    private $order;
+    private $orderItem;
+
 
 
 
@@ -33,7 +40,10 @@ class AdminProductController extends Controller
         Product $product,
         ProductImage $productImage,
         Tag $tag,
-        ProductTag $productTag
+        ProductTag $productTag,
+        Order $order,
+        OrderItem $orderItem
+
     ) {
 
 
@@ -42,6 +52,8 @@ class AdminProductController extends Controller
         $this->productImage = $productImage;
         $this->tag = $tag;
         $this->productTag = $productTag;
+        $this->order = $order;
+        $this->orderItem = $orderItem;
     }
 
 
@@ -66,7 +78,29 @@ class AdminProductController extends Controller
     }
 
     public function store(productAddRequest $request)
+
     {
+        // $dataProductCreate = [
+        //     'name' => $request->name,
+        //     'price' => $request->price,
+        //     'content' => $request->contents,
+        //     'user_id' => auth()->id(),
+        //     'category_id' => $request->category_id
+
+        // ];
+        // $dataUploadFeatureImg = $this->storageTraitUpload($request, 'feature_img_path', 'product');
+        // if (!empty($dataUploadFeatureImg)) {
+
+        //     $dataProductCreate['feature_img_name'] = $dataUploadFeatureImg['file_name'];
+        //     $dataProductCreate['feature_image_path'] = $dataUploadFeatureImg['file_path'];
+        // }
+        // $product = $this->product->create($dataProductCreate);
+
+        // dd($product);
+
+
+
+
         try {
             DB::beginTransaction();
             $dataProductCreate = [
@@ -82,7 +116,7 @@ class AdminProductController extends Controller
             if (!empty($dataUploadFeatureImg)) {
 
                 $dataProductCreate['feature_img_name'] = $dataUploadFeatureImg['file_name'];
-                $dataProductCreate['feature_img_path'] = $dataUploadFeatureImg['file_path'];
+                $dataProductCreate['feature_image_path'] = $dataUploadFeatureImg['file_path'];
             }
             $product = $this->product->create($dataProductCreate);
             //them data to product image
@@ -186,5 +220,18 @@ class AdminProductController extends Controller
 
             Log::error('Message: ' . $exception->getMessage() . '  line: ' . $exception->getLine());
         }
+    }
+    // show order
+    function showOrder()
+    {
+
+        $orders = $this->order->latest()->paginate(6);
+        return view('admin.order.index', compact('orders'));
+    }
+    // show orderItem
+    function showOrderItem()
+    {
+        $orderItems = $this->orderItem->latest()->paginate(6);
+        return view('admin.order.orderItem', compact('orderItems'));
     }
 }

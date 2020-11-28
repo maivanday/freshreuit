@@ -37,7 +37,7 @@
                               <input type="file" class="form-control-file" name="feature_img_path">
                               <div class="col-md-4 container_img_detail">
                                   <div class="row">
-                                      <img class="feature_img" src="{{$product->feature_img_path}}" alt="">
+                                      <img class="feature_img" src="{{$product->feature_image_path}}" alt="">
                                   </div>
                               </div>
                           </div>

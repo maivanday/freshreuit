@@ -24,7 +24,7 @@
                 <div class="product-list row">
                     @foreach($products as $product)
                     <div class="product-item col-md-6  col-xs-12">
-                        <img class="set_img" src="{{$product->feature_img_path}}">
+                        <img class="set_img" src="{{$product->feature_image_path}}">
                         <div class="row ml-1">
                             @foreach($product->productImage as $imgList)
                             <img src="{{$imgList->image_path}}" class="img-list">

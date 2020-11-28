@@ -73,7 +73,7 @@
                     <div>
 
                         <h5><i class="fa fa-map-marker" aria-hidden="true"></i> Địa chỉ nhận hàng</h5>
-                        <a href="#address" data-toggle="modal">Thay đổi >></a>
+
                         <label class="anim">
                             @if( count($users->customers) >0 )
                             <ul style="list-style: none;">
@@ -143,7 +143,7 @@
 
 
 
-                        <a href="{{ route('checkCart.showPayment')}}" type="button" class="btn  btn-primary submit check_out ">Tiến hành thanh toán</a>
+                        <button type="button" class="btn  btn-primary submit check_out payment">Đặt hàng</button>
 
                     </div>
                 </div>
@@ -219,14 +219,16 @@
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 
-    <script src="{{asset('frontend/dist/js/addInfoCustomer.js')}}"></script>
+
+    <script src="{{asset('frontend/dist/js/addPayment.js')}}"></script>
+
 
     <script src="{{asset('frontend/dist/js/popper.min.js')}}"></script>
     <script src="{{asset('frontend/dist/js/bootstrap.min.js')}}"></script>
 
     <!-- an error -->
 
-    <!--  -->
+
 
     @if(isset($users)&& count($users->customers) == 0)
     <script>
