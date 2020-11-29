@@ -32,7 +32,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center product-item">
-                                <img src="{{ $productItemTab->feature_img_path}}" class=" img-thumbnail" />
+                                <img src="{{ $productItemTab->feature_image_path}}" class=" img-thumbnail" />
                                 <h5>{{ number_format( $productItemTab->price)}} vnd</h5>
                                 <p>{{$productItemTab->name}}</p>
                                 <div class="mask">

@@ -66,7 +66,7 @@ class HomeController extends Controller
                 'name' => $product->name,
                 'price' => $product->price,
                 'quantity' => 1,
-                'image' => $product->feature_img_path,
+                'image' => $product->feature_image_path,
             ];
         }
         session()->put('cart', $cart);
