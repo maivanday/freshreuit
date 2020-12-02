@@ -57,18 +57,30 @@ class HomeController extends Controller
     public function addToCart($id)
     {
 
-        $product = Product::find($id);
-        $cart =   session()->get('cart');
-        if (isset($cart[$id])) {
-            $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
-        } else {
-            $cart[$id] = [
-                'name' => $product->name,
-                'price' => $product->price,
-                'quantity' => 1,
-                'image' => $product->feature_image_path,
+        $product = Product::findOrFail($id);
+        $cart =  session()->get('cart');
+        if (!$cart) {
+            $cart = [
+                $id => [
+                    'name' => $product->name,
+                    'price' => $product->price,
+                    'quantity' => 1,
+                    'image' => $product->feature_image_path,
+                ]
             ];
+            session()->put('cart', $cart);
+            return back();
         }
+        // if (isset($cart[$id])) {
+        //     $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
+        // }
+        $cart[$id] = [
+            'name' => $product->name,
+            'price' => $product->price,
+            'quantity' => 1,
+            'image' => $product->feature_image_path,
+        ];
+
         session()->put('cart', $cart);
         return response()->json([
             'code' => 200,
@@ -88,7 +100,7 @@ class HomeController extends Controller
             $carts = session()->get('cart');
             $carts[$request->id]['quantity'] = $request->quantity;
             session()->put('cart', $carts);
-            $carts = session()->get('cart');
+            //$carts = session()->get('cart');
             $cartUpdate = view('frontend_web/product/cartContent', compact('carts'))->render();
             return response()->json(['cartUpdate' => $cartUpdate, 'code' => 200], 200);
         }

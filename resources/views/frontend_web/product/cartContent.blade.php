@@ -1,3 +1,4 @@
+@if (session('cart'))
 <div class="cart" data-url="{{route('product.deleteCart')}}">
     <div class="container-fluid">
         <div class="row">
@@ -31,11 +32,11 @@
                         <td>{{ number_format($cartItem['price'])}} vnd</td>
 
                         <td>
-                            <input type="number" value="{{$cartItem['quantity']}}" min="1"></td>
+                            <input type="number" id="quantity" value="{{$cartItem['quantity']}}" min="1"></td>
                         <td>{{ number_format($cartItem['price']*$cartItem['quantity'])}} vnd</td>
 
                         <td>
-                            <a href="" data-id="{{$id}}" class="btn btn-primary cart_update ">Cập nhật</a>
+                            <a href="" data-id="{{$id}}" id="idProduct" class="btn d-none btn-primary cart_update ">Cập nhật</a>
                             <a href="" data-id="{{$id}}" class="btn btn-danger cart_delete ">Xóa</a>
 
                         </td>
@@ -57,3 +58,6 @@
         </div>
     </div>
 </div>
+@else
+<p>khong co</p>
+@endif

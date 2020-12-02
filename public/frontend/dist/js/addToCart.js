@@ -44,24 +44,26 @@ function cartDelete(event) {
 
             });
         }
-           function cartUpdate(event) {
+    $(document).ready(function() {
+         $('#quantity').change(function(event){
             event.preventDefault();
             let urlUpdate = $('.update_cart_url').data('url');
-            let id = $(this).data('id');
-            let quantity = $(this).parents('tr').find('input').val();
+            let id = $("#idProduct").data('id');
+            let quantity = $(this).val();
 
-
-            $.ajax({
+             $.ajax({
                 type: "GET",
                 url: urlUpdate,
                 data: {
+                    _token:"{{csrf_token()}}",
                     id: id,
                     quantity: quantity
                 },
                 success: function(data) {
 
                     if (data.code === 200) {
-                        $('.cart_wrapper').html(data.cartUpdate);
+                        // $('.cart_wrapper').html(data.cartUpdate);
+                        window.location.reload();
 
                     }
                 },
@@ -70,8 +72,38 @@ function cartDelete(event) {
                 }
 
             });
+        })
+    })
 
-        }
+
+        //    function cartUpdate(event) {
+        //     event.preventDefault();
+        //     let urlUpdate = $('.update_cart_url').data('url');
+        //     let id = $(this).data('id');
+        //     let quantity = $(this).parents('tr').find('input').val();
+
+
+        //     $.ajax({
+        //         type: "GET",
+        //         url: urlUpdate,
+        //         data: {
+        //             id: id,
+        //             quantity: quantity
+        //         },
+        //         success: function(data) {
+
+        //             if (data.code === 200) {
+        //                 $('.cart_wrapper').html(data.cartUpdate);
+
+        //             }
+        //         },
+        //         error: function() {
+
+        //         }
+
+        //     });
+
+        //}
 
 
 //---------------------------
@@ -79,7 +111,7 @@ function cartDelete(event) {
 $(function(){
   $('.add-to-cart').on('click', adToCart);
   $('.cart_delete').on('click', cartDelete);
-  $('.cart_update').on('click', cartUpdate);
+ // $('.cart_update').on('click', cartUpdate);
 }
 );
 //
