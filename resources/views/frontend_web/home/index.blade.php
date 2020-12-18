@@ -21,7 +21,10 @@
     </ul>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_2.jpg')}}" alt="" />
+            <div class="setImg">
+
+                <img class="img-fluid" src="{{asset('frontend/dist/img/slider_2.jpg')}}" alt="" />
+            </div>
             <div class="carousel-caption">
                 <h2 class="display-4">Fresh Fruit</h2>
 
@@ -33,33 +36,18 @@
         </div>
 
         <div class="carousel-item">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_1.jpg')}}" alt="" />
+            <div class="setImg">
+                <img class="img-fluid" src="{{asset('frontend/dist/img/slider_1.jpg')}}" alt="" />
+            </div>
         </div>
         <div class="carousel-item">
-            <img class="img-fluid" src="{{asset('frontend/dist/img/slider_4.jpg')}}" alt="" />
+            <div class="setImg">
+                <img class="img-fluid" src="{{asset('frontend/dist/img/slider_4.jpg')}}" alt="" />
+            </div>
         </div>
     </div>
 </div>
-<!-- jumbotron -->
-<!-- <div class="container-fluid">
-      <div class="jumbotron">
-        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-10">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad dolore
-            deleniti illum dolores sunt! Magnam, quasi minus. Eligendi omnis
-            beatae aperiam dolorum dicta amet delectus, enim obcaecati veritatis
-            consequuntur qui.
-          </p>
-        </div>
-        <div class="col-sm-12 col-md-9 col-lg-9 col-xl-10">
-          <a href="#">
-            <button type="button" class="btn btn-outline-secondary">
-              Dang ky ngay
-            </button>
-          </a>
-        </div>
-      </div>
-    </div> -->
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6 col-xl-4 pl-0 pr-0">

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{{asset('frontend/dist/css/bootstrap.min.css')}}" />
     <style>
         body {
             margin: 0;
@@ -43,7 +43,7 @@
                             @csrf
                             <h3 class="text-center text-info">Đăng ký</h3>
                             <div class="form-group">
-                                <label for="name" class="text-info">Username</label><br>
+                                <label for="name" class="text-info">full name</label><br>
                                 <input type="text" name="name" id="name" class="form-control">
                             </div>
                             <div class="form-group">
@@ -60,7 +60,7 @@
                                 <input type="submit" name="register" class="btn btn-info btn-md" value="Đăng ký">
                             </div>
                             <div id="login-link" class="text-right">
-                                <a href="{{ route('home')}}" class="text-info"> Trở về</a>
+                                <a href="{{route('login.admin')}}" type="button" class="btn btn-info btn-md mt-2"> Đăng nhập</a>
                             </div>
 
                         </form>
@@ -69,8 +69,8 @@
             </div>
         </div>
     </div>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{asset('frontend/dist/js/jquery-3.5.1.min.js')}}"> </script>
+    <script src="{{asset('frontend/dist/js/bootstrap.min.js')}}"></script>
 </body>
 
 </html>

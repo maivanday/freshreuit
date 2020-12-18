@@ -10,7 +10,9 @@
     @yield('title')
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="{{asset('admin_lte/plugins/fontawesome-free/css/all.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('admin_lte/plugins/fontawesome-free/css/all.min.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('frontend/dist/css/font-awesome.min.css')}}" />
+
     <!-- Theme style -->
     <link rel="stylesheet" href=" {{asset('admin_lte/dist/css/adminlte.min.css')}} ">
     <!-- Google Font: Source Sans Pro -->

@@ -13,7 +13,7 @@
                         <th scope="col">Số lượng</th>
                         <th scope="col">Thành tiền</th>
 
-                        <th scope="col">Sửa/Xóa</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,5 +59,19 @@
     </div>
 </div>
 @else
-<p>khong co</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <img src="{{ asset('frontend/dist/img/cart.png')}} " width="200px" alt="">
+            <p>Không có sản phẩm trong giỏ hàng</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center ">
+            <a href="{{ route('home')}}" type="button" class="btn btn-success"> Tiếp tục mua hàng</a>
+        </div>
+    </div>
+</div>
+
 @endif

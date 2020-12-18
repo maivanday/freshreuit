@@ -43,7 +43,7 @@
                         <span class="tag-color"> {{$productTag->name}}</span>
                         @endforeach
                         <br>
-                        <a href="#" data-url="{{route('product.addToCart',['id'=>$product->id])}}" class="add-to-cart btn btn-success mt-3 mb-3"><i class="fa fa-shopping-cart"></i>Them vao gio hang</a>
+                        <a href="#" data-url="{{route('product.addToCart',['id'=>$product->id])}}" class="add-to-cart btn btn-success mt-3 mb-3"></i>Them vao gio hang</a>
 
                         <p>{{$product->content}}</p>
                     </div>

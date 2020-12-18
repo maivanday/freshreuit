@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>show cart</title>
-    <link rel="stylesheet" href="{{asset('frontend/dist/css/fontawesome.min.css')}}" />
+
     <link rel="stylesheet" href="{{asset('frontend/dist/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="{{asset('frontend/dist/css/style.css')}}" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
@@ -168,14 +167,16 @@
                         @csrf
                         <div class=" form-group">
                             <label class="col-form-label">Tên khách hàng</label>
-                            <input type="text" class="form-control name  " value="{{ $users->name}}" name="name" required="">
+
+                            <input type="text" class="form-control name  " value="{{ $users->name}}" name="name" required="" {{$users->name != null ? "disabled" :""}}>
                             <label class="col-form-label errorName" style="color: red;"></label>
+
 
 
                         </div>
                         <div class=" form-group">
                             <label class="col-form-label">Địa Chỉ Email</label>
-                            <input type="text" class="form-control email  " value="{{ $users->email}}" placeholder="Nhập địa chỉ email" name="email" required="">
+                            <input type="text" class="form-control email " value="{{ $users->email}}" name="email" required="" {{$users->email != null ? "disabled" :""}}>
                             <label class="col-form-label errorEmail" style="color: red;"></label>
 
 
@@ -192,10 +193,7 @@
                             <label class="col-form-label errorAddress" style="color: red;"></label>
 
                         </div>
-                        <div class="form-group">
-                            <input type="checkbox" class="actives" name="active" checked>
-                            <label class="">Dùng địa chỉ này cho các đơn hàng sau</label>
-                        </div>
+
                         <div class="right-w3l">
                             <button type="button" class=" btn btn-primary form-control save">Save</button>
                         </div>

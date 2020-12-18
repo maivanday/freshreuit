@@ -23,13 +23,14 @@
 }
 .carousel-inner img {
     width: 100% !important;
-    height: 750px !important;
+    height: 750px;
 }
 
 .carousel-caption {
     position: absolute;
     top: 50%;
 }
+
 .carousel-caption#top {
     position: absolute;
     top: 0 !important;
@@ -67,10 +68,16 @@
   } */
 }
 @media (max-width: 756px) {
-    /* .carousel-inner img {
-    width: 100% !important;
-    height: 600px !important;
-  } */
+    .carousel-inner img {
+        width: 100% !important;
+        height: 320px !important;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 13%;
+    }
+
     .display-4 {
         font-size: 50px;
     }
